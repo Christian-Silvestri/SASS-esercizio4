@@ -1,0 +1,6 @@
+@mixin article-card ($color, $border-color, $font) {
+    color: $color;
+    border: solid rem(1) $border-color;
+    font-size: $font;
+
+}

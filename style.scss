@@ -1,0 +1,59 @@
+@import 'scss/color-font';
+@import 'scss/mixin-article';
+@import 'scss/function';
+%text {
+    color: $color-tertiary;
+    border-bottom: solid rem(1) $color-secondary;
+}
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: rem(10);
+}
+
+div {
+    border: solid rem(1) $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: rem(10);
+    gap: rem(10);
+
+    h1 {
+        @extend %text;
+    }
+    h2 {
+        @extend %text;
+        border: solid rem(1) $color-primary;
+        padding: 1rem;
+       
+    }
+
+    section.main {
+        display: flex;
+        
+
+        article {
+            padding: rem(20) rem(10);
+
+            &:nth-child(odd) {
+                @include article-card($color-secondary, $color-tertiary, $default-size);
+            }
+
+            &:nth-child(even) {
+                @include article-card($color-primary, $color-tertiary, $default-size);
+            }
+        }
+    }
+
+
+    section.footer {
+        @include article-card($color-tertiary, $color-secondary, rem(24));
+        padding: rem(20) rem(10);
+    }
+}
